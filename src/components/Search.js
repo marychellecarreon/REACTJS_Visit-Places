@@ -7,6 +7,8 @@ class Search extends Component {
       e.preventDefault();
       //console.log("clicked")
       const keyTyped = this.refs.inputword.value;
+      const update = this.props;
+
 
       axios.post('http://localhost:3001/getLocations', {
         city:keyTyped,
@@ -14,7 +16,8 @@ class Search extends Component {
 
       })
        .then(function (response) {
-        console.log(response);
+         console.log(response)
+         update.callUpdate(response.data.data)
       })
        .catch(function (error) {
        console.log(error);

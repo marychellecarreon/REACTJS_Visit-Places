@@ -6,14 +6,28 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      results:{}
+    }
+  }
+
+  updateState(newPlaces){
+    this.setState({
+      results:newPlaces
+    })
+  }
+
+
   render() {
     return (
     <div className="container">
       <div className="row">
        <div className="col-md-8">
 
-        <Search />
-        <ResultList />
+        <Search callUpdate={this.updateState.bind(this)} />
+        <ResultList resultPlaces={this.state.results} />
 
         </div>
         <div className="col-md-4">
