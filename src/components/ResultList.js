@@ -17,7 +17,7 @@ class ResultList extends Component {
               <h2 className="profile-name">{name.name}</h2>
               <div className="profile-info">
                 <div className="info"><span className="">Address</span> {name.formatted_address}</div>
-                <div className="info"><button className="btn btn-primary" onClick={() => this.props.savePlace(name.name)}>Save Place</button></div>
+                <div className="info"><button className="btn btn-primary" onClick={() => this.props.saveList(name.name)}>Save Place</button></div>
               </div>
             </div>
           </div>
